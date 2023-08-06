@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h2>Weather</h2>
+    <form id="weather-form">
+        <label for="weather-location">Location:</label>
+        <input type="text" id="weather-location" required>
+        <button type="submit">search</button>
+    </form>
+    <div id="content">
+        <div id="description"></div>
+        <img src="" alt="" id="weather-icon">
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
