@@ -1,5 +1,6 @@
-// api.js
-const myApiKey = "d497700796c940518d932911230608";
+// src/api.js
+import { myApiKey } from "./config.js"
+
 const baseUrl = "https://api.weatherapi.com/v1";
 
 async function getWeather(location) {

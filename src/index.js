@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         const weatherLocationInput = document.getElementById("weather-location");
         const weatherIcon = document.getElementById("weather-icon");
-        const weatherDescription = document.getElementById("description");
+        const weatherName = document.getElementById("weather-name");
         
 
         const location = weatherLocationInput.value;
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Update the DOM with the weather data
             weatherIcon.src = weatherIconUrl;
-            weatherDescription.textContent = weatherText;
+            weatherName.textContent = weatherText;
         } catch (error) {
             console.error(error);
         }
