@@ -2,6 +2,25 @@
 import { getWeather } from "./api.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+    const windDirections = {
+        "N": { direction: "North", angle: 0 },
+        "NNE": { direction: "North-Northeast", angle: 22.5 },
+        "NE": { direction: "Northeast", angle: 45 },
+        "ENE": { direction: "East-Northeast", angle: 67.5 },
+        "E": { direction: "East", angle: 90 },
+        "ESE": { direction: "East-Southeast", angle: 112.5 },
+        "SE": { direction: "Southeast", angle: 135 },
+        "SSE": { direction: "South-Southeast", angle: 157.5 },
+        "S": { direction: "South", angle: 180 },
+        "SSW": { direction: "South-Southwest", angle: 202.5 },
+        "SW": { direction: "Southwest", angle: 225 },
+        "WSW": { direction: "West-Southwest", angle: 247.5 },
+        "W": { direction: "West", angle: 270 },
+        "WNW": { direction: "West-Northwest", angle: 292.5 },
+        "NW": { direction: "Northwest", angle: 315 },
+        "NNW": { direction: "North-Northwest", angle: 337.5 }
+    };
+      
     
     const weatherForm = document.getElementById("weather-form");
     const weatherLocationInput = document.getElementById("weather-location");
@@ -11,10 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const weatherTime = document.getElementById("weather-time");
     const weatherIcon = document.getElementById("weather-icon");
     const temperatureDegree = document.getElementById("temperatureDegree");
+    const celsiusButton = document.getElementById("celsius");
+    const fahrenheitButton = document.getElementById("fahrenheit");
     const windDirection = document.getElementById("windDirection");
     const windDegree = document.getElementById("windDegree");
+    const kphButton = document.getElementById("kph");
+    const mphButton = document.getElementById("mph");
 
-    const isCelsius = true; 
+    let weather = {};
 
     weatherForm.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -25,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const weatherData = await getWeather(location);
             console.log(weatherData); // You can process the data here
 
-            const weather = {
+            weather = {
                 country: weatherData.location.country,
                 city: weatherData.location.region,
                 state: weatherData.current.condition.text,
@@ -46,12 +69,25 @@ document.addEventListener("DOMContentLoaded", () => {
             weatherName.innerText = weather.state;
             weatherTime.innerText = weather.lastUpdated;
             temperatureDegree.innerText = weather.temperatureC;
-            windDirection.innerText = weather.windDirection;
+            windDirection.innerText = windDirections[weather.windDirection].direction;
             windDegree.innerText = weather.windKph;
             
         } catch (error) {
             console.error(error);
         }
+    });
+    // Add event listeners to toggle
+    celsiusButton.addEventListener("click", () => {
+        temperatureDegree.innerText = weather.temperatureC;
+    });
+    fahrenheitButton.addEventListener("click", () => {
+        temperatureDegree.innerText = weather.temperatureF;
+    });
+    kphButton.addEventListener("click", () => {
+        windDegree.innerText = weather.windKph;
+    });
+    mphButton.addEventListener("click", () => {
+        windDegree.innerText = weather.windMph;
     });
 });
 
