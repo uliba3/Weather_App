@@ -1,6 +1,43 @@
 // dist/index.js
 import { getWeather } from "./api.js";
 
+// Function to create and apply an arrow with a specified angle
+function createArrow(angleDegrees) {
+    const arrowContainer = document.getElementById("windDirection");
+
+    // Remove all child elements of arrowContainer
+    while (arrowContainer.firstChild) {
+        arrowContainer.removeChild(arrowContainer.firstChild);
+    }
+
+    // Calculate the length and angle for the arrow
+    const length = 50; // Change this to adjust arrow length
+    const angleRadians = (angleDegrees * Math.PI) / 180;
+
+    // Create a unique class name for the arrow
+    const className = `arrow-${angleDegrees}`;
+
+    // Create a dynamic CSS rule for the arrow
+    const styleSheet = document.styleSheets[0];
+    styleSheet.insertRule(
+        `.${className}::after {
+            content: '';
+            border: 15px solid transparent;
+            border-top: 15px solid black;
+            display: inline-block;
+            margin-right: 5px;
+            transform: rotate(${angleDegrees}deg);
+        }`,
+        styleSheet.cssRules.length
+    );
+
+    // Create a div with the arrow class and add it to the container
+    const arrowElement = document.createElement("div");
+    arrowElement.className = className;
+    arrowContainer.appendChild(arrowElement);
+}
+  
+
 document.addEventListener("DOMContentLoaded", () => {
     const windDirections = {
         "N": { direction: "North", angle: 0 },
@@ -69,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
             weatherName.innerText = weather.state;
             weatherTime.innerText = weather.lastUpdated;
             temperatureDegree.innerText = weather.temperatureC;
-            windDirection.innerText = windDirections[weather.windDirection].direction;
+            createArrow(windDirections[weather.windDirection].angle);
             windDegree.innerText = weather.windKph;
             
         } catch (error) {

@@ -19,12 +19,12 @@ label, input, button {
   width: 1050px;
   height: 300px;
   display: grid;
-  grid-template-columns: 4fr 3fr 4fr 3fr;
+  grid-template-columns: 2fr 2fr 3fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas: 
-    "wName txInf tempt winds"
-    "image txInf tempt winds"
-    "image txInf tempt winds";
+    "wName tempt txInf"
+    "image winds txInf"
+    "image winds txInf";
 }
 
 img {
@@ -36,13 +36,14 @@ img {
 #weather-name {
   grid-area: wName;
   align-self: end;
-  font-size: 32px;
+  font-size: 64px;
 }
 
 #textInf {
   grid-area: txInf;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
+  font-size: 32px;
 }
 
 #country {
@@ -65,10 +66,14 @@ img {
 
 #temperatureDegree {
   align-self: center;
+  font-size: 64px;
+  justify-self: end;
 }
 
 #temperatureUnit {
   align-self: center;
+  font-size: 32px;
+  justify-self: start;
 }
 
 #wind {
@@ -80,4 +85,14 @@ img {
 #windInf {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+#windDegree {
+  font-size: 32px;
+  justify-self: end;
+}
+
+#windUnit {
+  font-size: 16px;
+  justify-self: start;
 }
