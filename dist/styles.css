@@ -109,3 +109,7 @@ img {
 .shadeColor {
   color: grey;
 }
+
+.empty {
+  visibility:hidden;
+}

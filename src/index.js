@@ -9,7 +9,6 @@ function createArrow(angleDegrees) {
     arrowContainer.className = className;
 }
 
-
 document.addEventListener("DOMContentLoaded", () => {
     const windDirections = {
         "N": { direction: "North", angle: 0 },
@@ -29,8 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "NW": { direction: "Northwest", angle: 315 },
         "NNW": { direction: "North-Northwest", angle: 337.5 }
     };
-      
-    
+    const content = document.getElementById("content");
     const weatherForm = document.getElementById("weather-form");
     const weatherLocationInput = document.getElementById("weather-location");
     const country = document.getElementById("country");
@@ -50,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     weatherForm.addEventListener("submit", async (event) => {
         event.preventDefault();
 
+        content.className = "";
         const location = weatherLocationInput.value;
 
         try {
