@@ -1,70 +1,223 @@
-/* styles.css */
+/* styles.css*/
+body {
+  text-align: center;
+}
 
-/* Reset default margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Body styling */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  /* Heading styling */
-  h2 {
-    margin-bottom: 20px;
-  }
-  
-  /* Form styling */
-  #weather-form {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    font-weight: bold;
-    margin-right: 10px;
-  }
-  
-  input[type="text"] {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Content container styling */
-  #content {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 4px;
-    background-color: #fff;
-  }
-  
-  #description {
-    margin-bottom: 10px;
-  }
-  
-  #weather-icon {
-    max-width: 100px;
-    display: block;
-    margin: 0 auto;
-  }
-  
+h2 {
+  font-size: 64px;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+label, input, button {
+  font-size: 32px;
+  height: 64px;
+}
+
+#content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1050px;
+  height: 300px;
+  display: grid;
+  grid-template-columns: 2fr 2fr 3fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 
+    "wName tempt txInf"
+    "image winds txInf"
+    "image winds txInf";
+}
+
+img {
+  width: 80%;
+  height: 100%;
+  grid-area: image;
+}
+
+#weather-name {
+  grid-area: wName;
+  align-self: end;
+  font-size: 64px;
+}
+
+#textInf {
+  grid-area: txInf;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  font-size: 32px;
+}
+
+#country {
+  align-self: end;
+}
+
+#city {
+  align-self: center;
+}
+
+#weather-time {
+  align-self: start;
+}
+
+#temperature {
+  grid-area: tempt;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#temperatureDegree {
+  align-self: center;
+  font-size: 64px;
+  justify-self: end;
+}
+
+#temperatureUnit {
+  align-self: center;
+  font-size: 32px;
+  justify-self: start;
+}
+
+#wind {
+  grid-area: winds;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+}
+
+#windDirection {
+  position: absolute;
+  width: 50px;
+  margin: 25px;
+  height: 50px;
+}
+
+#windInf {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#windDegree {
+  font-size: 32px;
+  justify-self: end;
+}
+
+#windUnit {
+  font-size: 16px;
+  justify-self: start;
+}
+
+.shadeColor {
+  color: grey;
+}
+
+.arrow0 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(315deg);
+}
+.arrow225 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-22.5deg);
+}
+.arrow450 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(0deg);
+}
+.arrow675 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(22.5deg);
+}
+.arrow900 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+}
+.arrow1125 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(67.5deg);
+}
+.arrow1350 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(90deg);
+}
+.arrow1575 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(112.5deg);
+}
+.arrow1800 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(135deg);
+}
+.arrow2025 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(157.5deg);
+}
+.arrow2250 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(180deg);
+}
+.arrow2475 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(202.5deg);
+}
+.arrow2700 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(225deg);
+}
+.arrow2925 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(247.5deg);
+}
+.arrow3150 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(270deg);
+}
+.arrow3375 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(292.5deg);
+}

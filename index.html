@@ -8,13 +8,35 @@
 <body>
     <h2>Weather</h2>
     <form id="weather-form">
-        <label for="weather-location">Location:</label>
+        <label for="weather-location">Location: </label>
         <input type="text" id="weather-location" required>
         <button type="submit">search</button>
     </form>
     <div id="content">
-        <div id="description"></div>
         <img src="" alt="" id="weather-icon">
+        <div id="weather-name"></div>
+        <div id="textInf">
+            <div id="country"></div>
+            <div id="city"></div>
+            <div id="weather-time"></div>
+        </div>
+        <div id="temperature">
+            <div id="temperatureDegree"></div>
+            <div id="temperatureUnit">
+                <div id="celsius">°C</div>
+                <div id="fahrenheit">°F</div>
+            </div>
+        </div>
+        <div id="wind">
+            <div id="windDirection"></div>
+            <div id="windInf">
+                <div id="windDegree"></div>
+                <div id="windUnit">
+                    <div id="kph">kph</div>
+                    <div id="mph">mph</div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>
