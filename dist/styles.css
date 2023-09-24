@@ -1,3 +1,4 @@
+/* dist/styles.css*/
 body {
   text-align: center;
 }
@@ -82,6 +83,13 @@ img {
   grid-template-rows: 2fr 1fr;
 }
 
+#windDirection {
+  position: absolute;
+  width: 50px;
+  margin: 25px;
+  height: 50px;
+}
+
 #windInf {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -95,4 +103,117 @@ img {
 #windUnit {
   font-size: 16px;
   justify-self: start;
+}
+
+.arrow0 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(315deg);
+}
+.arrow225 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-22.5deg);
+}
+.arrow450 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(0deg);
+}
+.arrow675 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(22.5deg);
+}
+.arrow900 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+}
+.arrow1125 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(67.5deg);
+}
+.arrow1350 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(90deg);
+}
+.arrow1575 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(112.5deg);
+}
+.arrow1800 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(135deg);
+}
+.arrow2025 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(157.5deg);
+}
+.arrow2250 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(180deg);
+}
+.arrow2475 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(202.5deg);
+}
+.arrow2700 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(225deg);
+}
+.arrow2925 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(247.5deg);
+}
+.arrow3150 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(270deg);
+}
+.arrow3375 {
+  border: solid black;
+  border-width: 3px 3px 0px 0px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(292.5deg);
 }
