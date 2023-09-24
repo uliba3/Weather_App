@@ -109,6 +109,10 @@ img {
   color: grey;
 }
 
+.empty {
+  visibility:hidden;
+}
+
 .arrow0 {
   border: solid black;
   border-width: 3px 3px 0px 0px;
