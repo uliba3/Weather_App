@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const temperatureDegree = document.getElementById("temperatureDegree");
     const celsiusButton = document.getElementById("celsius");
     const fahrenheitButton = document.getElementById("fahrenheit");
-    const windDirection = document.getElementById("windDirection");
     const windDegree = document.getElementById("windDegree");
     const kphButton = document.getElementById("kph");
     const mphButton = document.getElementById("mph");
@@ -80,6 +79,10 @@ document.addEventListener("DOMContentLoaded", () => {
             temperatureDegree.innerText = weather.temperatureC;
             createArrow(windDirections[weather.windDirection].angle);
             windDegree.innerText = weather.windKph;
+            fahrenheitButton.className = "shadeColor";
+            celsiusButton.className = "";
+            kphButton.className = "";
+            mphButton.className = "shadeColor";
             
         } catch (error) {
             console.error(error);
@@ -88,15 +91,23 @@ document.addEventListener("DOMContentLoaded", () => {
     // Add event listeners to toggle
     celsiusButton.addEventListener("click", () => {
         temperatureDegree.innerText = weather.temperatureC;
+        fahrenheitButton.className = "shadeColor";
+        celsiusButton.className = "";
     });
     fahrenheitButton.addEventListener("click", () => {
         temperatureDegree.innerText = weather.temperatureF;
+        fahrenheitButton.className = "";
+        celsiusButton.className = "shadeColor";
     });
     kphButton.addEventListener("click", () => {
         windDegree.innerText = weather.windKph;
+        kphButton.className = "";
+        mphButton.className = "shadeColor";
     });
     mphButton.addEventListener("click", () => {
         windDegree.innerText = weather.windMph;
+        kphButton.className = "shadeColor";
+        mphButton.className = "";
     });
 });
 
